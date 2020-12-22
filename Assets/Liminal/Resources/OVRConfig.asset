@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20553fac56ec59645857c0732b787431, type: 3}
   m_Name: OVRConfig
   m_EditorClassIdentifier: 
-  androidSDKPath: C:\Users\Admin\AppData\Local\Android\sdk
-  gradlePath: 
-  jdkPath: 
+  androidSDKPath: E:\Unity\2019.1.10f1\Editor\Data\PlaybackEngines\AndroidPlayer\SDK
+  gradlePath: E:\Unity\2019.1.10f1\Editor\Data\PlaybackEngines\AndroidPlayer\Tools\gradle\lib\gradle-launcher-5.1.1.jar
+  jdkPath: E:\Unity\2019.1.10f1\Editor\Data\PlaybackEngines\AndroidPlayer\Tools\OpenJDK\Windows\bin\java.exe
