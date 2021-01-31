@@ -10,7 +10,8 @@ public class Climax : MonoBehaviour
     public UnityEvent BeginFadeAway;
     float timer = 0;
     bool TimeUp = false;
-    public float t;
+    float t;
+    public float ExperienceProgress;
 
     public ParticleSystem[] particleSystems;
 
@@ -22,6 +23,7 @@ public class Climax : MonoBehaviour
     ParticleSystem.MinMaxCurve climaxSpin;
     ParticleSystem.MinMaxCurve climaxSpinAttraction;
     ParticleSystem.MinMaxCurve climaxY;
+
 
 
     private void Start()
@@ -58,17 +60,18 @@ public class Climax : MonoBehaviour
             climaxField.rotationAttraction = new ParticleSystem.MinMaxCurve(Mathf.Lerp(0, climaxSpinAttraction.constant, t));
 
 
-            foreach (ParticleSystem p in particleSystems)
+            /*foreach (ParticleSystem p in particleSystems)
             {
                 var em = p.emission;
                 em.enabled = false;
 
-            }
+            }*/
 
         }
         if (timer + Time.deltaTime < experienceLength * 60) 
         {
             timer += Time.deltaTime;
+            ExperienceProgress = Mathf.Round((timer / (experienceLength*60) * 100));
         }
         else if(!TimeUp)
         {
@@ -76,6 +79,13 @@ public class Climax : MonoBehaviour
             if (BeginFadeAway != null)
             {
                 BeginFadeAway.Invoke();
+            }
+
+            foreach (ParticleSystem p in particleSystems)
+            {
+                var em = p.emission;
+                em.enabled = false;
+
             }
             
         }
